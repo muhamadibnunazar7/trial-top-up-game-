@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IBNU STORE | Top Up Game Murah & Terpercaya</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #0b0b16;
+    color: white;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(90deg, #6500ff, #a600ff);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px #6500ff;
+}
+
+header h1 {
+    font-size: 30px;
+}
+
+header p {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* NAVIGATION */
+nav {
+    background: #171727;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #bd80ff;
+}
+
+/* HERO */
+.hero {
+    padding: 45px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #16002d, #30005e);
+}
+
+.hero h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.hero button {
+    margin-top: 20px;
+    padding: 13px 30px;
+    border: none;
+    border-radius: 10px;
+    background: #a600ff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.section-title {
+    margin: 25px 0 15px;
+    color: #c58aff;
+}
+
+/* CARD */
+.card {
+    background: #19192b;
+    padding: 22px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #383052;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #555;
+    background: #101020;
+    color: white;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+/* GAME SELECTOR GRID */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.game-card {
+    background: #25253b;
+    padding: 16px 10px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.game-card:hover {
+    border-color: #a600ff;
+    transform: scale(1.03);
+}
+
+.game-card.active {
+    background: #420080;
+    border-color: #bb66ff;
+}
+
+.game-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.logo-ff {
+    border: 1px solid #ffd166;
+}
+
+.logo-ml {
+    border: 1px solid #90e0ef;
+}
+
+.logo-pubg {
+    border: 1px solid #f5b700;
+}
+
+.logo-genshin {
+    border: 1px solid #e0aaff;
+}
+
+.game-card h3 {
+    font-size: 14px;
+}
+
+/* ITEM GRID */
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.item {
+    background: #25253b;
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.item:hover {
+    border-color: #a600ff;
+    transform: scale(1.03);
+}
+
+.item.active {
+    background: #420080;
+    border-color: #bb66ff;
+}
+
+.item h3 {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.item p {
+    color: #d5aaff;
+    font-weight: bold;
+}
+
+/* PAYMENT */
+.payment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.payment {
+    padding: 15px 17px;
+    background: #25253b;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 0.25s;
+}
+
+.payment:hover {
+    border-color: #a600ff;
+}
+
+.payment.active {
+    background: #420080;
+    border-color: #bb66ff;
+}
+
+.pay-badge {
+    padding: 4px 9px;
+    border-radius: 7px;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.4px;
+    color: white;
+    line-height: 1.2;
+}
+
+.badge-dana {
+    background: #108ee9;
+    border: 1px solid #7cc4fa;
+}
+
+.badge-ovo {
+    background: #4c2a85;
+    border: 1px solid #b388ff;
+}
+
+.badge-gopay {
+    background: #00aa13;
+    border: 1px solid #7ef58d;
+}
+
+.badge-qris {
+    background: #e11d48;
+    border: 1px solid #fda4af;
+}
+
+/* ORDER */
+.total {
+    font-size: 23px;
+    color: #c58aff;
+    margin: 15px 0;
+}
+
+.order-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(90deg, #7000ff, #b000ff);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.order-btn:hover {
+    opacity: 0.85;
+}
+
+/* INFO */
+.info {
+    line-height: 1.9;
+    color: #ddd;
+}
+
+/* FOOTER */
+footer {
+    background: #171727;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 8px;
+}
+
+.social-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.social-btn,
+.wa-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.social-btn:hover,
+.wa-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.92;
+}
+
+.wa-btn {
+    background: #25d366;
+}
+
+.ig-btn {
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+}
+
+.tt-btn {
+    background: #010101;
+    border: 1px solid #444;
+    box-shadow: 2px 0 0 #25f4ee, -2px 0 0 #fe2c55;
+}
+
+.social-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+/* RESPONSIVE */
+@media(max-width: 600px) {
+    header h1 {
+        font-size: 25px;
+    }
+
+    .hero h2 {
+        font-size: 23px;
+    }
+
+    .game-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .item-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    nav a {
+        margin: 0 6px;
+        font-size: 13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>💎 IBNU STORE</h1>
+    <p>Top Up Game Murah, Mudah & Praktis</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#topup">Top Up</a>
+    <a href="#cara">Cara Order</a>
+    <a href="#kontak">Kontak</a>
+</nav>
+
+<section class="hero" id="home">
+    <h2>🔥 TOP UP GAME FAVORITMU 🔥</h2>
+    <p>
+        Selamat datang di IBNU STORE!
+        <br>
+        Pilih Game & Item favoritmu, lalu pesan langsung via WhatsApp.
+    </p>
+
+    <button onclick="location.href='#topup'">
+        TOP UP SEKARANG
+    </button>
+</section>
+
+<div class="container" id="topup">
+
+    <!-- STEP 1: PILIH GAME -->
+    <h2 class="section-title">1. Pilih Game</h2>
+    <div class="card">
+        <div class="game-grid">
+            <div class="game-card active" onclick="pilihGame(this, 'ff')">
+                <img class="game-logo logo-ff" src="foto-ff.jpg" alt="Free Fire">
+                <h3>Free Fire</h3>
+            </div>
+            <div class="game-card" onclick="pilihGame(this, 'ml')">
+                <img class="game-logo logo-ml" src="foto-ml.jpg" alt="Mobile Legends">
+                <h3>Mobile Legends</h3>
+            </div>
+            <div class="game-card" onclick="pilihGame(this, 'pubg')">
+                <img class="game-logo logo-pubg" src="foto-pubg.jpg" alt="PUBG Mobile">
+                <h3>PUBG Mobile</h3>
+            </div>
+            <div class="game-card" onclick="pilihGame(this, 'genshin')">
+                <img class="game-logo logo-genshin" src="foto-genshin.jpg" alt="Genshin Impact">
+                <h3>Genshin Impact</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- STEP 2: INPUT ID PLAYER -->
+    <h2 class="section-title">2. Masukkan Data Akun</h2>
+    <div class="card">
+        <label id="labelID">ID Player</label>
+        <input
+            type="text"
+            id="playerID"
+            placeholder="Masukkan ID Player"
+            inputmode="numeric"
+            maxlength="15"
+        >
+        
+        <!-- Input tambahan khusus Mobile Legends (Zone ID) -->
+        <div id="zoneContainer" style="display: none;">
+            <label>Zone ID (MLBB)</label>
+            <input
+                type="text"
+                id="zoneID"
+                placeholder="Masukkan Server/Zone ID"
+                inputmode="numeric"
+                maxlength="8"
+            >
+        </div>
+    </div>
+
+    <!-- STEP 3: PILIH NOMINAL / ITEM -->
+    <h2 class="section-title">3. Pilih Nominal / Item</h2>
+    <div class="card">
+        <div class="item-grid" id="itemGrid">
+            <!-- Item game akan di-render secara dinamis via JavaScript -->
+        </div>
+    </div>
+
+    <!-- STEP 4: PILIH PEMBAYARAN -->
+    <h2 class="section-title">4. Pilih Pembayaran</h2>
+    <div class="card">
+        <div class="payment-grid">
+            <div class="payment" onclick="pilihPayment(this, 'DANA')">
+                <span class="pay-badge badge-dana">DANA</span>
+                <span>DANA</span>
+            </div>
+            <div class="payment" onclick="pilihPayment(this, 'OVO')">
+                <span class="pay-badge badge-ovo">OVO</span>
+                <span>OVO</span>
+            </div>
+            <div class="payment" onclick="pilihPayment(this, 'GoPay')">
+                <span class="pay-badge badge-gopay">GoPay</span>
+                <span>GoPay</span>
+            </div>
+            <div class="payment" onclick="pilihPayment(this, 'QRIS')">
+                <span class="pay-badge badge-qris">QR</span>
+                <span>QRIS</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- STEP 5: KONFIRMASI -->
+    <h2 class="section-title">5. Konfirmasi Pesanan</h2>
+    <div class="card">
+        <p>Game: <span id="gameSelected">Free Fire</span></p>
+        <p style="margin-top:8px;">Produk: <span id="produk">Belum dipilih</span></p>
+        <p style="margin-top:8px;">Pembayaran: <span id="metode">Belum dipilih</span></p>
+
+        <h3 class="total">
+            Total: <span id="total">Rp0</span>
+        </h3>
+
+        <button class="order-btn" onclick="orderWhatsApp()">
+            🛒 BELI SEKARANG
+        </button>
+    </div>
+
+    <!-- CARA ORDER -->
+    <h2 class="section-title" id="cara">📋 Cara Order</h2>
+    <div class="card info">
+        <p>1. Pilih Game yang ingin di-top up.</p>
+        <p>2. Masukkan ID Player (dan Zone ID jika memilih MLBB).</p>
+        <p>3. Pilih jumlah Diamond / UC / Genesis Crystal.</p>
+        <p>4. Pilih metode pembayaran.</p>
+        <p>5. Klik tombol Beli Sekarang untuk diteruskan ke WhatsApp admin.</p>
+        <p>6. Lakukan pembayaran sesuai petunjuk admin.</p>
+    </div>
+
+</div>
+
+<footer id="kontak">
+    <h2>💎 IBNU STORE</h2>
+    <p>Top Up Game Terpercaya</p>
+    <p>Admin WhatsApp: +62 896-8522-6271</p>
+
+    <div class="social-group">
+        <a
+            class="wa-btn"
+            href="https://wa.me/6289685226271"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.04 2C6.54 2 2.08 6.46 2.08 11.96c0 1.76.46 3.48 1.34 5L2 22l5.18-1.36c1.48.81 3.15 1.24 4.86 1.24 5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm5.79 14.12c-.24.68-1.41 1.3-1.94 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.66-.61-2.92-1.26-4.83-4.2-4.98-4.4-.15-.2-1.19-1.58-1.19-3.01s.75-2.13 1.02-2.42c.27-.29.59-.36.79-.36.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.58.82 2 .89 2.15.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.18-.31.4-.45.54-.15.15-.3.31-.13.61.17.3.77 1.27 1.65 2.05 1.13 1.01 2.09 1.32 2.39 1.47.3.15.47.12.65-.07.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.34.07.12.07.7-.17 1.38z"/>
+            </svg>
+            <span>CHAT ADMIN</span>
+        </a>
+
+        <a
+            class="social-btn ig-btn"
+            href="https://www.instagram.com/_wrld.zarrr/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5zm8.93 1.35a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4z"/>
+            </svg>
+            <span>@_wrld.zarrr</span>
+        </a>
+
+        <a
+            class="social-btn tt-btn"
+            href="https://www.tiktok.com/@muhamad1bnunazar"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
+            </svg>
+            <span>@muhamad1bnunazar</span>
+        </a>
+    </div>
+
+    <p style="margin-top:20px;">
+        © 2026 IBNU STORE
+    </p>
+</footer>
+
+<script>
+const nomorWA = "6289685226271";
+
+/* DATABASE PRODUK PER GAME */
+const gameData = {
+    ff: {
+        nama: "Free Fire",
+        items: [
+            { nama: "5 Diamond", harga: 1000 },
+            { nama: "12 Diamond", harga: 2500 },
+            { nama: "50 Diamond", harga: 8000 },
+            { nama: "70 Diamond", harga: 10000 },
+            { nama: "140 Diamond", harga: 20000 },
+            { nama: "355 Diamond", harga: 48000 },
+            { nama: "720 Diamond", harga: 95000 },
+            { nama: "1450 Diamond", harga: 190000 }
+        ]
+    },
+    ml: {
+        nama: "Mobile Legends",
+        items: [
+            { nama: "5 Diamond", harga: 1500 },
+            { nama: "12 Diamond", harga: 3500 },
+            { nama: "53 Diamond", harga: 14000 },
+            { nama: "77 Diamond", harga: 20000 },
+            { nama: "154 Diamond", harga: 40000 },
+            { nama: "217 Diamond", harga: 56000 },
+            { nama: "366 Diamond", harga: 95000 },
+            { nama: "758 Diamond", harga: 195000 }
+        ]
+    },
+    pubg: {
+        nama: "PUBG Mobile",
+        items: [
+            { nama: "35 UC", harga: 7000 },
+            { nama: "53 UC", harga: 10000 },
+            { nama: "77 UC", harga: 14500 },
+            { nama: "154 UC", harga: 29000 },
+            { nama: "217 UC", harga: 42000 },
+            { nama: "366 UC", harga: 69000 },
+            { nama: "758 UC", harga: 140000 }
+        ]
+    },
+    genshin: {
+        nama: "Genshin Impact",
+        items: [
+            { nama: "60 Genesis Crystals", harga: 14000 },
+            { nama: "300+30 Genesis Crystals", harga: 68000 },
+            { nama: "980+110 Genesis Crystals", harga: 210000 },
+            { nama: "1980+260 Genesis Crystals", harga: 430000 },
+            { nama: "Blessing of the Welkin Moon", harga: 68000 }
+        ]
+    }
+};
+
+/* STATE PESANAN */
+let selectedGameKey = "ff";
+let itemDipilih = "";
+let hargaDipilih = 0;
+let pembayaranDipilih = "";
+
+/* FORMAT RUPIAH */
+function formatRupiah(angka) {
+    return new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR",
+        minimumFractionDigits: 0
+    }).format(angka);
+}
+
+/* RENDER ITEM GAME */
+function renderItems(gameKey) {
+    const itemGrid = document.getElementById("itemGrid");
+    itemGrid.innerHTML = "";
+    
+    // Reset pilihan produk & total
+    itemDipilih = "";
+    hargaDipilih = 0;
+    document.getElementById("produk").textContent = "Belum dipilih";
+    document.getElementById("total").textContent = "Rp0";
+
+    gameData[gameKey].items.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "item";
+        div.onclick = function() { pilihItem(this, item.nama, item.harga); };
+        div.innerHTML = `
+            <h3>${item.nama}</h3>
+            <p>${formatRupiah(item.harga)}</p>
+        `;
+        itemGrid.appendChild(div);
+    });
+}
+
+/* GANTI GAME */
+function pilihGame(element, gameKey) {
+    document.querySelectorAll(".game-card").forEach(card => {
+        card.classList.remove("active");
+    });
+    element.classList.add("active");
+
+    selectedGameKey = gameKey;
+    document.getElementById("gameSelected").textContent = gameData[gameKey].nama;
+
+    // Tampilkan field Zone ID khusus Mobile Legends
+    const zoneContainer = document.getElementById("zoneContainer");
+    if (gameKey === "ml") {
+        zoneContainer.style.display = "block";
+    } else {
+        zoneContainer.style.display = "none";
+    }
+
+    renderItems(gameKey);
+}
+
+/* PILIH ITEM/NOMINAL */
+function pilihItem(element, nama, harga) {
+    document.querySelectorAll(".item").forEach(i => {
+        i.classList.remove("active");
+    });
+    element.classList.add("active");
+
+    itemDipilih = nama;
+    hargaDipilih = harga;
+
+    document.getElementById("produk").textContent = nama;
+    document.getElementById("total").textContent = formatRupiah(harga);
+}
+
+/* PILIH METODE PEMBAYARAN */
+function pilihPayment(element, metode) {
+    document.querySelectorAll(".payment").forEach(p => {
+        p.classList.remove("active");
+    });
+    element.classList.add("active");
+
+    pembayaranDipilih = metode;
+    document.getElementById("metode").textContent = metode;
+}
+
+/* PROSES KE WHATSAPP */
+function orderWhatsApp() {
+    const playerID = document.getElementById("playerID").value.trim();
+    const zoneID = document.getElementById("zoneID").value.trim();
+
+    /* VALIDASI INPUT */
+    if (playerID === "") {
+        alert("Silakan masukkan ID Player terlebih dahulu!");
+        return;
+    }
+
+    if (selectedGameKey === "ml" && zoneID === "") {
+        alert("Silakan masukkan Zone ID Mobile Legends!");
+        return;
+    }
+
+    if (itemDipilih === "") {
+        alert("Silakan pilih produk/nominal yang ingin dibeli!");
+        return;
+    }
+
+    if (pembayaranDipilih === "") {
+        alert("Silakan pilih metode pembayaran!");
+        return;
+    }
+
+    const namaGame = gameData[selectedGameKey].nama;
+    const infoID = (selectedGameKey === "ml") ? `${playerID} (${zoneID})` : playerID;
+
+    /* FORMAT PESAN WHATSAPP */
+    const pesan =
+`Halo Admin IBNU STORE 👋
+
+Saya ingin melakukan top up game.
+
+━━━━━━━━━━━━━━━━
+💎 DETAIL PESANAN
+━━━━━━━━━━━━━━━━
+
+🎮 Game: ${namaGame}
+🆔 ID Player: ${infoID}
+💎 Produk: ${itemDipilih}
+💰 Harga: ${formatRupiah(hargaDipilih)}
+💳 Pembayaran: ${pembayaranDipilih}
+
+━━━━━━━━━━━━━━━━
+
+Mohon konfirmasi pesanan dan instruksi pembayarannya.
+
+Terima kasih!`;
+
+    const pesanEncoded = encodeURIComponent(pesan);
+    const linkWA = "https://wa.me/" + nomorWA + "?text=" + pesanEncoded;
+
+    window.location.href = linkWA;
+}
+
+// Inisialisasi item awal (Free Fire)
+renderItems("ff");
+</script>
+
+</body>
+</html>
